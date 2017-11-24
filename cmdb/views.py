@@ -1,4 +1,6 @@
 # coding:utf-8
+import json
+
 import werobot
 from django.shortcuts import render
 from django.shortcuts import HttpResponse
@@ -18,5 +20,6 @@ def cal(request, a, b):
 
 
 def get_token(request):
-    c = robot.client.get_access_token()
-    return HttpResponse(c)
+    data = {'token': robot.client.get_access_token()}
+
+    return HttpResponse(json.dumps(data))
