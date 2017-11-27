@@ -1,11 +1,10 @@
 # coding:utf-8
 import json
 
-import werobot
-from django.shortcuts import render
 from django.shortcuts import HttpResponse
+from django.shortcuts import render
+
 from cmdb.robot import robot
-from django.core import serializers
 
 
 # Create your views here.
@@ -21,5 +20,4 @@ def cal(request, a, b):
 
 def get_token(request):
     data = {'token': robot.client.get_access_token()}
-
     return HttpResponse(json.dumps(data))

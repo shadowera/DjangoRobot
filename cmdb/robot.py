@@ -3,8 +3,8 @@
 from werobot import WeRoBot
 
 robot = WeRoBot(token='guishuai')
-robot.config['APP_ID'] = 'wxe31287e98a274894'
-robot.config['APP_SECRET'] = '3d8b928b3263ad3fc88e497a5f494abc'
+robot.config['APP_ID'] = 'wx860aedabf993a256'
+robot.config['APP_SECRET'] = '05e69d96a6953f2cd4840fc1a1c073be'
 
 
 @robot.handler
