@@ -1,6 +1,9 @@
 # Filename: robot.py
 import json
 
+import time
+
+import requests
 from werobot import WeRoBot
 
 robot = WeRoBot(token='kuyunhudong')
@@ -20,7 +23,23 @@ def make_error_page(url):
 
 @robot.scan
 def scan_code(message):
-    return "mac 是 %s" % message.key
+    send_template(message.source, message.key)
+    return ""
+
+
+def send_template(open_id, key):
+    headers = {"Content-type": "application/json"}  # application/x-www-form-urlencoded
+    url = 'https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=%s' % robot.client.get_access_token()
+    params = ({'touser': open_id,
+               'template_id': 'sCIXkD03qCBGtbiU07Mznfnd3d802jWfDiNBB-TJCUY',
+               'data': {
+                   'first': {'value': '你好，你已成功绑定设备。'},
+                   'keyword1': {'value': key},
+                   'keyword2': {'value': time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))},
+                   'keyword3': {'value': '已绑定'},
+                   'keyword4': {'value': '1'},
+                   'remark': {'value': '感谢您的使用。'}}})
+    requests.post(url, json=json.JSONEncoder().encode(params))
 
 
 @robot.subscribe
