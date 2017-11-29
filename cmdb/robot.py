@@ -34,6 +34,7 @@ def send_template(open_id, key):
     params = ({'touser': open_id, 'template_id': 'sCIXkD03qCBGtbiU07Mznfnd3d802jWfDiNBB-TJCUY',
                'data': {'first': {'value': '你好，你已成功绑定设备。'}, 'keyword1': {'value': key}, 'keyword2': {'value': '1'},
                         'keyword3': {'value': '已绑定'}, 'keyword4': {'value': '1'}, 'remark': {'value': '感谢您的使用。'}}})
+    print(json.JSONEncoder().encode(params))
     post = requests.post(url, json=json.JSONEncoder().encode(params))
     print(post.content)
 
