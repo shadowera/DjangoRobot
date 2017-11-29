@@ -3,9 +3,9 @@ import json
 
 from werobot import WeRoBot
 
-robot = WeRoBot(token='guishuai')
-robot.config['APP_ID'] = 'wx860aedabf993a256'
-robot.config['APP_SECRET'] = '05e69d96a6953f2cd4840fc1a1c073be'
+robot = WeRoBot(token='kuyunhudong')
+robot.config['APP_ID'] = 'wxb067c8b8e210e780'
+robot.config['APP_SECRET'] = '057c03777f4fac33b71ec23f1d85a1c7'
 
 
 @robot.text
