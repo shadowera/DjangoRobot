@@ -13,7 +13,7 @@ robot.config['APP_SECRET'] = '057c03777f4fac33b71ec23f1d85a1c7'
 
 @robot.text
 def hello(message):
-    send_template('1', '2')
+    send_template(message.source, '2')
     return 'Hello World!'
 
 
