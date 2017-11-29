@@ -36,7 +36,7 @@ def send_template(open_id, key):
                'data': {
                    'first': {'value': '你好，你已成功绑定设备。'},
                    'keyword1': {'value': key},
-                   'keyword2': {'value': time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))},
+                   'keyword2': {'value': '1'},
                    'keyword3': {'value': '已绑定'},
                    'keyword4': {'value': '1'},
                    'remark': {'value': '感谢您的使用。'}}})
