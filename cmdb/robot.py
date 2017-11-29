@@ -40,7 +40,7 @@ def send_template(open_id, key):
                    'keyword3': {'value': '已绑定'},
                    'keyword4': {'value': '1'},
                    'remark': {'value': '感谢您的使用。'}}})
-    requests.post(url, json=json.JSONEncoder().encode(params))
+    requests.post(url, data=params)
 
 
 @robot.subscribe
