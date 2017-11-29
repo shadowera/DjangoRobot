@@ -28,6 +28,7 @@ def scan_code(message):
 
 
 def send_template(open_id, key):
+    print('send_template')
     headers = {"Content-type": "application/json"}  # application/x-www-form-urlencoded
     url = 'https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=%s' % robot.client.get_access_token()
     params = ({'touser': open_id,
