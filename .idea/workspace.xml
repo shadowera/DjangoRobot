@@ -71,8 +71,8 @@
       <file leaf-file-name="robot.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cmdb/robot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="655">
-              <caret line="38" column="46" lean-forward="true" selection-start-line="38" selection-start-column="46" selection-end-line="38" selection-end-column="46" />
+            <state relative-caret-position="525">
+              <caret line="35" column="81" lean-forward="false" selection-start-line="35" selection-start-column="81" selection-end-line="35" selection-end-column="81" />
               <folding>
                 <element signature="e#21#32#0" expanded="true" />
               </folding>
@@ -418,7 +418,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511945004934</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="add template">
+      <created>1511945531003</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1511945531003</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -886,8 +893,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cmdb/robot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="655">
-          <caret line="38" column="46" lean-forward="true" selection-start-line="38" selection-start-column="46" selection-end-line="38" selection-end-column="46" />
+        <state relative-caret-position="525">
+          <caret line="35" column="81" lean-forward="false" selection-start-line="35" selection-start-column="81" selection-end-line="35" selection-end-column="81" />
           <folding>
             <element signature="e#21#32#0" expanded="true" />
           </folding>
