@@ -15,7 +15,7 @@ robot.config['APP_SECRET'] = '057c03777f4fac33b71ec23f1d85a1c7'
 def hello(message):
     logger.info(message.source)
     send_template(message.source, '2')
-    return 'Hello World:%s' % message.source
+    return 'Hello :%s' % message.source
 
 
 @robot.error_page
