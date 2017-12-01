@@ -16,7 +16,8 @@ def hello(message):
     logger.info(message.source)
     send_template(message.source, '2')
     info = robot.client.get_user_info(message.source)
-    print(info.headimgurl)
+    for n, m in info:
+        print('name=%s ,value=%s' % (n, m))
     return 'Hello :%s' % message.source
 
 
