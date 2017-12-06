@@ -25,12 +25,8 @@ def recognize_voice(media_id):
     })
 
 
-@robot.voice
 @robot.text
 def hello(message):
-    if message.type == 'voice':
-        recognize_voice(message.media_id)
-        return ''
     logger.info(message.source)
     send_template(message.source, '2')
     info = robot.client.get_user_info(message.source)
@@ -67,3 +63,10 @@ def send_template(open_id, key):
 def on_subscribe(message):
     info = json.dumps(robot.client.get_user_info(message.source))
     return 'hello %s' % info['nickname']
+
+
+@robot.handler
+def on_wechat_message(message):
+    if message.type == 'voice':
+        recognize_voice(message.media_id)
+        return ''
