@@ -58,7 +58,7 @@ def on_subscribe(message):
 
 @robot.handler
 def on_wechat_message(message):
-    print('type=%s') % message.type
+    print('type=%s' % message.type)
     if message.type == 'voice':
         recognize_voice(message.media_id)
         return '收到'
