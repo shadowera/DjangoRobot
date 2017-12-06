@@ -29,4 +29,4 @@ def recognize_voice(request):
         print(received_json_data)
     else:
         print('abc')
-    return None
+    return HttpResponse('')
