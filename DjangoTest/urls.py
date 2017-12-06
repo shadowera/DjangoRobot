@@ -24,5 +24,6 @@ urlpatterns = [
     url(r'^index/', views.index, name='index'),
     url(r'^robot/', make_view(robot), name='robot'),
     url(r'^cal/(\d+)/(\d+)/$', views.cal, name='cal'),
-    url(r'^get_token/', views.get_token, name='get_token')
+    url(r'^get_token/', views.get_token, name='get_token'),
+    url(r'^recognize/',views.recognize_voice)
 ]

@@ -21,3 +21,11 @@ def cal(request, a, b):
 def get_token(request):
     data = {'token': robot.client.get_access_token()}
     return HttpResponse(json.dumps(data))
+
+
+def recognize_voice(request):
+    if request.method == 'POST':
+        received_json_data = json.loads(request.body)
+        print(received_json_data)
+    else:
+        print('abc')
