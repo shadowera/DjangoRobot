@@ -17,6 +17,7 @@ aipSpeech = AipSpeech(APP_ID, API_KEY, SECRET_KEY)
 
 
 def recognize_voice(media_id):
+    print('recognize voice ....')
     url = 'http://file.api.weixin.qq.com/cgi-bin/media/get?access_token=%s&media_id=%s' % (
         robot.client.get_access_token(), media_id)
     aipSpeech.asr('', 'pcm', 16000, {
@@ -57,10 +58,10 @@ def on_subscribe(message):
 
 @robot.handler
 def on_wechat_message(message):
-    print(message.type)
+    print('type=%s') % message.type
     if message.type == 'voice':
         recognize_voice(message.media_id)
-        return ''
+        return '收到'
     if message.type == 'text':
         logger.info(message.source)
         send_template(message.source, '2')
