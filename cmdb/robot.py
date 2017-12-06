@@ -26,13 +26,11 @@ def recognize_voice(media_id):
 
 
 @robot.voice
-def on_voice_message(message):
-    recognize_voice(message.media_id)
-    return ''
-
-
 @robot.text
 def hello(message):
+    if message.type == 'voice':
+        recognize_voice(message.media_id)
+        return ''
     logger.info(message.source)
     send_template(message.source, '2')
     info = robot.client.get_user_info(message.source)
