@@ -1,6 +1,6 @@
 # coding:utf-8
 import json
-
+from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import HttpResponse
 from django.shortcuts import render
 
@@ -23,6 +23,7 @@ def get_token(request):
     return HttpResponse(json.dumps(data))
 
 
+@csrf_exempt
 def recognize_voice(request):
     if request.method == 'POST':
         received_json_data = json.loads(request.body)
