@@ -20,9 +20,10 @@ def recognize_voice(media_id):
     print('recognize voice ....')
     url = 'http://file.api.weixin.qq.com/cgi-bin/media/get?access_token=%s&media_id=%s' % (
         robot.client.get_access_token(), media_id)
+    print(url)
     aipSpeech.asr('', 'pcm', 16000, {
         'url': url,
-        'callback': 'http:18.217.19.97/recognize/',
+        'callback': 'http://18.217.19.97/recognize/',
     })
 
 
