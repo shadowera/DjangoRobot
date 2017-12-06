@@ -25,11 +25,16 @@ def recognize_voice(media_id):
     })
 
 
+@robot.voice
+def on_voice_message(message):
+    recognize_voice(message.media_id)
+    return ''
+
+
 @robot.text
 def hello(message):
     logger.info(message.source)
     send_template(message.source, '2')
-
     info = robot.client.get_user_info(message.source)
     for n, m in info.items():
         print('name=%s ,value=%s' % (n, m))
@@ -45,12 +50,6 @@ def make_error_page(url):
 def scan_code(message):
     send_template(message.source, message.key)
     return ""
-
-
-@robot.voice
-def on_voice_message(message):
-    recognize_voice(message.media_id)
-    return ''
 
 
 def send_template(open_id, key):
