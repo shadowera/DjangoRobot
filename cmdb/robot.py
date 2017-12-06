@@ -25,16 +25,6 @@ def recognize_voice(media_id):
     })
 
 
-@robot.text
-def hello(message):
-    logger.info(message.source)
-    send_template(message.source, '2')
-    info = robot.client.get_user_info(message.source)
-    for n, m in info.items():
-        print('name=%s ,value=%s' % (n, m))
-    return 'Hello :%s' % message.source
-
-
 @robot.error_page
 def make_error_page(url):
     return "<h1>喵喵喵 %s 不是给麻瓜访问的快走开</h1>" % url
@@ -67,6 +57,14 @@ def on_subscribe(message):
 
 @robot.handler
 def on_wechat_message(message):
+    print(message.type)
     if message.type == 'voice':
         recognize_voice(message.media_id)
         return ''
+    if message.type == 'text':
+        logger.info(message.source)
+        send_template(message.source, '2')
+        info = robot.client.get_user_info(message.source)
+        for n, m in info.items():
+            print('name=%s ,value=%s' % (n, m))
+        return 'Hello :%s' % message.source
