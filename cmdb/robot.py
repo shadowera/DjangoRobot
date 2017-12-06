@@ -21,7 +21,7 @@ def recognize_voice(media_id):
         robot.client.get_access_token(), media_id)
     aipSpeech.asr('', 'pcm', 16000, {
         'url': url,
-        'callback': 'http://xxx.com/receive',
+        'callback': 'http:18.217.19.97/recognize/',
     })
 
 
