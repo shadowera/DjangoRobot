@@ -30,7 +30,7 @@ def recognize_voice(request):
         print(s)
         result = json.loads(s)
         if result['err_no'] == '0':
-            print(result[result])
+            print(result[result][0])
         else:
             print('你说啥？')
     else:
