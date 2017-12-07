@@ -16,16 +16,20 @@ SECRET_KEY = 'cc1ead9bbcb8278ed6b106fe3fecce4c'
 aipSpeech = AipSpeech(APP_ID, API_KEY, SECRET_KEY)
 
 
-def download(url):
+def get_media_path(media_id):
+    return 'wechat_sound//%s' % media_id
+
+
+def download(url, media_id):
     r = requests.get(url, stream=True)
-    with open("python.pdf", "wb") as pdf:
+    with open(get_media_path(media_id), "wb") as pdf:
         for chunk in r.iter_content(chunk_size=1024):
             if chunk:
                 pdf.write(chunk)
 
 
-def get_file_content(filePath):
-    with open('python.pdf', 'rb') as fp:
+def get_file_content(media_id):
+    with open(get_media_path(media_id), 'rb') as fp:
         return fp.read()
 
 
@@ -45,7 +49,7 @@ def recognize_sound(media_id):
     url = 'http://file.api.weixin.qq.com/cgi-bin/media/get?access_token=%s&media_id=%s' % (
         robot.client.get_access_token(), media_id)
     download(url)
-    result = aipSpeech.asr(get_file_content('python.pdf'), 'amr', 8000, {'lan': 'zh', })
+    result = aipSpeech.asr(get_file_content(get_media_path(media_id)), 'amr', 8000, {'lan': 'zh', })
     print(result)
     if result['err_no'] == 0:
         return result['result'][0]
