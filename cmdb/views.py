@@ -28,7 +28,7 @@ def recognize_voice(request):
     print(request)
     if request.method == 'POST':
         s = str(request.body, encoding="utf-8")
-        print(s)
+        print('body=%s' % s)
         result = json.loads(s)
         if result['err_no'] == 0:
             print(result['result'][0])
