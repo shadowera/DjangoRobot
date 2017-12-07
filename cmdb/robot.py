@@ -48,7 +48,7 @@ def recognize_voice(media_id, cuid):
 def recognize_sound(media_id):
     url = 'http://file.api.weixin.qq.com/cgi-bin/media/get?access_token=%s&media_id=%s' % (
         robot.client.get_access_token(), media_id)
-    download(url)
+    download(url,media_id)
     result = aipSpeech.asr(get_file_content(get_media_path(media_id)), 'amr', 8000, {'lan': 'zh', })
     print(result)
     if result['err_no'] == 0:
