@@ -47,11 +47,8 @@ def recognize_sound(media_id):
     download(url)
     result = aipSpeech.asr(get_file_content('python.pdf'), 'amr', 8000, {'lan': 'zh', })
     print(result)
-    s = str(result.body, encoding="utf-8")
-    print('body=%s' % s)
-    json_ob = json.loads(s)
     if result['err_no'] == 0:
-        return json_ob['result'][0]
+        return result['result'][0]
     else:
         return '你说啥？'
 
