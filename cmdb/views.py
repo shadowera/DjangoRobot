@@ -1,5 +1,7 @@
 # coding:utf-8
 import json
+
+import requests
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import HttpResponse
 from django.shortcuts import render
@@ -21,6 +23,10 @@ def cal(request, a, b):
 def get_token(request):
     data = {'token': robot.client.get_access_token()}
     return HttpResponse(json.dumps(data))
+
+
+
+
 
 
 @csrf_exempt

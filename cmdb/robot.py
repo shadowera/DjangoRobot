@@ -16,6 +16,17 @@ SECRET_KEY = 'cc1ead9bbcb8278ed6b106fe3fecce4c'
 aipSpeech = AipSpeech(APP_ID, API_KEY, SECRET_KEY)
 
 
+def download(url):
+    r = requests.get(url)
+    with open(url, "wb") as code:
+        code.write(r.content)
+
+
+def get_file_content(filePath):
+    with open(filePath, 'rb') as fp:
+        return fp.read()
+
+
 def recognize_voice(media_id, cuid):
     print('recognize voice ....')
     url = 'http://file.api.weixin.qq.com/cgi-bin/media/get?access_token=%s&media_id=%s' % (
@@ -25,6 +36,15 @@ def recognize_voice(media_id, cuid):
         'url': url,
         'cuid': cuid,
         'callback': 'http://18.217.19.97/recognize/',
+    })
+
+
+def recognize_sound(media_id):
+    url = 'http://file.api.weixin.qq.com/cgi-bin/media/get?access_token=%s&media_id=%s' % (
+        robot.client.get_access_token(), media_id)
+    download(url)
+    return aipSpeech.asr(get_file_content('url'), 'amr', 8000, {
+        'lan': 'zh',
     })
 
 
@@ -62,8 +82,8 @@ def on_subscribe(message):
 def on_wechat_message(message):
     print('type=%s' % message.type)
     if message.type == 'voice':
-        recognize_voice(message.media_id, message.source)
-        return '收到'
+        return recognize_sound(message.media_id)
+
     if message.type == 'text':
         logger.info(message.source)
         send_template(message.source, '2')
