@@ -25,6 +25,7 @@ def get_token(request):
 
 @csrf_exempt
 def recognize_voice(request):
+    print(request)
     if request.method == 'POST':
         s = str(request.body, encoding="utf-8")
         print(s)
