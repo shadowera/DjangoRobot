@@ -45,9 +45,15 @@ def recognize_sound(media_id):
     url = 'http://file.api.weixin.qq.com/cgi-bin/media/get?access_token=%s&media_id=%s' % (
         robot.client.get_access_token(), media_id)
     download(url)
-    return aipSpeech.asr(get_file_content('python.pdf'), 'amr', 8000, {
-        'lan': 'zh',
-    })
+    result = aipSpeech.asr(get_file_content('python.pdf'), 'amr', 8000, {'lan': 'zh', })
+    print(result)
+    s = str(result.body, encoding="utf-8")
+    print('body=%s' % s)
+    json_ob = json.loads(s)
+    if result['err_no'] == 0:
+        return json_ob['result'][0]
+    else:
+        return '你说啥？'
 
 
 @robot.error_page
@@ -85,7 +91,6 @@ def on_wechat_message(message):
     print('type=%s' % message.type)
     if message.type == 'voice':
         return recognize_sound(message.media_id)
-
     if message.type == 'text':
         logger.info(message.source)
         send_template(message.source, '2')
