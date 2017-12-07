@@ -29,8 +29,8 @@ def recognize_voice(request):
         s = str(request.body, encoding="utf-8")
         print(s)
         result = json.loads(s)
-        if result['err_no'] == '0':
-            print(result[result][0])
+        if result['err_no'] == 0:
+            print(result['result'][0])
         else:
             print('你说啥？')
     else:
