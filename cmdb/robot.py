@@ -17,13 +17,15 @@ aipSpeech = AipSpeech(APP_ID, API_KEY, SECRET_KEY)
 
 
 def download(url):
-    r = requests.get(url)
-    with open(url, "wb") as code:
-        code.write(r.content)
+    r = requests.get(url, stream=True)
+    with open("python.pdf", "wb") as pdf:
+        for chunk in r.iter_content(chunk_size=1024):
+            if chunk:
+                pdf.write(chunk)
 
 
 def get_file_content(filePath):
-    with open(filePath, 'rb') as fp:
+    with open('python.pdf', 'rb') as fp:
         return fp.read()
 
 
@@ -43,7 +45,7 @@ def recognize_sound(media_id):
     url = 'http://file.api.weixin.qq.com/cgi-bin/media/get?access_token=%s&media_id=%s' % (
         robot.client.get_access_token(), media_id)
     download(url)
-    return aipSpeech.asr(get_file_content('url'), 'amr', 8000, {
+    return aipSpeech.asr(get_file_content('python.pdf'), 'amr', 8000, {
         'lan': 'zh',
     })
 
