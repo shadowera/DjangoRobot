@@ -27,8 +27,12 @@ def get_token(request):
 def recognize_voice(request):
     if request.method == 'POST':
         s = str(request.body, encoding="utf-8")
+        print(s)
         result = json.loads(s)
-        print(result['result'])
+        if result['err_no'] == '0':
+            print(result[result])
+        else:
+            print('你说啥？')
     else:
         print('abc')
     return HttpResponse('')
