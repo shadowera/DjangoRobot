@@ -137,7 +137,28 @@ def on_wechat_message(message):
             img="https://github.com/apple-touch-icon-144.png",
             url="https://github.com/whtsky/WeRoBot"
         )
+        article1 = Article(
+            title="WeRoBot",
+            description="WeRoBot是一个微信机器人框架",
+            img="https://github.com/apple-touch-icon-144.png",
+            url="https://github.com/whtsky/WeRoBot"
+        )
+        article2 = Article(
+            title="WeRoBot",
+            description="WeRoBot是一个微信机器人框架",
+            img="https://github.com/apple-touch-icon-144.png",
+            url="https://github.com/whtsky/WeRoBot"
+        )
+        article3 = Article(
+            title="WeRoBot",
+            description="WeRoBot是一个微信机器人框架",
+            img="https://github.com/apple-touch-icon-144.png",
+            url="https://github.com/whtsky/WeRoBot"
+        )
         reply.add_article(article)
+        reply.add_article(article1)
+        reply.add_article(article2)
+        reply.add_article(article3)
         return reply
         '''logger.info(message.source)
         send_template(message.source, '2')
