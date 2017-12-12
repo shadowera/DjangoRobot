@@ -1,5 +1,5 @@
 import jpush
-from jpush import common
+from cmdb.logger import logger
 
 _jpush = jpush.JPush('043317222d3cf4d1f1444b6a', '76da9381aff0b45c6726061b')
 _jpush.set_logging("DEBUG")
@@ -15,19 +15,19 @@ def push_alias_notification(mac, message):
     )
     push.notification = jpush.notification(alert=message)
     push.platform = jpush.all_
-    print(push.payload)
+    logger.info(push.payload)
     push.send()
 
 
-def push_alias_message(mac, content, **kwargs):
+def push_message_by_alias(alias, content, **kwargs):
     push.audience = jpush.audience(
-        jpush.alias(mac)
+        jpush.alias(alias)
     )
     push.message = jpush.message(content, extras=kwargs)
     push.platform = 'android'
-    print('payload:...=%s' % push.payload)
+    logger.info('payload:...=%s' % push.payload)
     push.send()
 
 
 if __name__ == '__main__':
-    push_alias_message('guishuai', 'hello world', data_from='data_form')
+    push_message_by_alias('guishuai', 'hello world', data_from='data_form')
