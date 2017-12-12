@@ -13,7 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from cmdb.robot import robot
 from werobot.contrib.django import make_view
 
@@ -25,5 +25,6 @@ urlpatterns = [
     url(r'^robot/', make_view(robot), name='robot'),
     url(r'^cal/(\d+)/(\d+)/$', views.cal, name='cal'),
     url(r'^get_token/', views.get_token, name='get_token'),
-    url(r'^recognize/',views.recognize_voice)
+    url(r'^recognize/', views.recognize_voice),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

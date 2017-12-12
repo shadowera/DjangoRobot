@@ -5,6 +5,7 @@ from cmdb.logger import logger
 import time
 import requests
 from werobot import WeRoBot
+from werobot.replies import ArticlesReply, Article
 
 robot = WeRoBot(token='kuyunhudong')
 robot.config['APP_ID'] = 'wxb067c8b8e210e780'
@@ -94,9 +95,18 @@ def on_wechat_message(message):
     if message.type == 'voice':
         return recognize_sound(message.media_id)
     if message.type == 'text':
-        logger.info(message.source)
+        reply = ArticlesReply(message=message)
+        article = Article(
+            title="WeRoBot",
+            description="WeRoBot是一个微信机器人框架",
+            img="https://github.com/apple-touch-icon-144.png",
+            url="https://github.com/whtsky/WeRoBot"
+        )
+        reply.add_article(article)
+        return reply
+        '''logger.info(message.source)
         send_template(message.source, '2')
         info = robot.client.get_user_info(message.source)
         for n, m in info.items():
             print('name=%s ,value=%s' % (n, m))
-        return 'Hello :%s' % message.source
+        return 'Hello :%s' % message.source'''

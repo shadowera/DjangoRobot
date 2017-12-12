@@ -9,7 +9,7 @@ push = _jpush.create_push()
 # if you set the logging level to "DEBUG",it will show the debug logging.
 
 
-def alias_notification(mac, message):
+def push_alias_notification(mac, message):
     push.audience = jpush.audience(
         jpush.alias(mac)
     )
@@ -19,10 +19,15 @@ def alias_notification(mac, message):
     push.send()
 
 
-def alias_message(mac, message):
+def push_alias_message(mac, content, **kwargs):
     push.audience = jpush.audience(
         jpush.alias(mac)
     )
+    push.message = jpush.message(content, extras=kwargs)
+    push.platform = 'android'
+    print('payload:...=%s' % push.payload)
+    push.send()
 
 
-alias_notification('guishuai', 'hello guishuai')
+if __name__ == '__main__':
+    push_alias_message('guishuai', 'hello world', data_from='data_form')

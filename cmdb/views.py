@@ -25,10 +25,6 @@ def get_token(request):
     return HttpResponse(json.dumps(data))
 
 
-
-
-
-
 @csrf_exempt
 def recognize_voice(request):
     print(request)
