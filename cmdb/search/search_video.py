@@ -180,19 +180,14 @@ def filter_fields(video_from, data):
             for key in item:
                 if key == 'albumName':
                     temp[FORMAT_FIELDS['TITLE']] = item[key]
-                    result.append(temp)
                 if key == 'posterPicUrl':
                     temp[FORMAT_FIELDS['THUMB']] = item[key]
-                    result.append(temp)
                 if key == 'picUrl':
                     temp[FORMAT_FIELDS['PIC_URL']] = item[key]
-                    result.append(temp)
                 if key == 'desc':
                     temp[FORMAT_FIELDS['DESCRIPTION']] = item[key]
-                    result.append(temp)
                 if key == 'playUrl':
                     temp[FORMAT_FIELDS['PLAY_URL']] = item[key]
-                    result.append(temp)
                 if key == 'html5PlayUrl':
                     temp[FORMAT_FIELDS['H5_PLAY_URL']] = item[key]
             result.append(temp)
