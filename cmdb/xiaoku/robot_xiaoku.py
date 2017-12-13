@@ -53,9 +53,9 @@ def process_text_message(text, message):
         if i >= 8:
             break
         article = Article(
-            title=result[FORMAT_FIELDS['TITLE']],
-            img=result[FORMAT_FIELDS['PIC_URL']],
-            url=result[FORMAT_FIELDS['PLAY_URL']]
+            title=data[FORMAT_FIELDS['TITLE']],
+            img=data[FORMAT_FIELDS['PIC_URL']],
+            url=data[FORMAT_FIELDS['PLAY_URL']]
         )
         reply.add_article(article)
         i = i + 1
