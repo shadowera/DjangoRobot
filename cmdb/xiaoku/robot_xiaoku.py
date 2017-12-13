@@ -55,6 +55,7 @@ def process_text_message(text, message):
         article = Article(
             title=data[FORMAT_FIELDS['TITLE']],
             img=data[FORMAT_FIELDS['PIC_URL']],
+            description=data[FORMAT_FIELDS['DESCRIPTION']],
             url=data[FORMAT_FIELDS['PLAY_URL']]
         )
         reply.add_article(article)

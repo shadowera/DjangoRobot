@@ -27,6 +27,7 @@ SEARCH_TYPE = [
 
 FORMAT_FIELDS = {
     'DATA_FORM': 'data_from',
+    'DESCRIPTION': 'description',
     'TITLE': 'title',
     'THUMB': 'thumb',
     'PIC_URL': 'pic_url',
@@ -185,6 +186,9 @@ def filter_fields(video_from, data):
                     result.append(temp)
                 if key == 'picUrl':
                     temp[FORMAT_FIELDS['PIC_URL']] = item[key]
+                    result.append(temp)
+                if key == 'desc':
+                    temp[FORMAT_FIELDS['DESCRIPTION']] = item[key]
                     result.append(temp)
                 if key == 'playUrl':
                     temp[FORMAT_FIELDS['PLAY_URL']] = item[key]
