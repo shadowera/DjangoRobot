@@ -1,12 +1,15 @@
 # Filename: robot.py
-import json
 from aip import AipSpeech
 from werobot.messages.messages import TextMessage
 from cmdb.jpushserver import push_message_by_alias
 from cmdb.logger import logger
+from cmdb.search.search_video import request_video_response_by_keywords, request_video_info_by_keywords, \
+    VIDEO_FROM_IQIYI, filter_iqiyi_fields, FORMAT_FIELDS
 import time
 import requests
 from werobot import WeRoBot
+import json
+
 from werobot.replies import ArticlesReply, Article
 
 robot = WeRoBot(token='kuyunhudong')
@@ -32,21 +35,48 @@ def on_subscribe(event):
 
 @robot.scan
 def on_scan(message):
-    push_message_by_alias('guishuai', 'hello world', data_from='data_form')
-    return ''
+    return '正在绑定 %s' % message.key
 
 
-def process_text_message(text, open_id):
+@robot.click
+def on_click(event):
     pass
+
+
+def process_text_message(text, message):
+    search = request_video_info_by_keywords(VIDEO_FROM_IQIYI, text)
+    json_str = json.loads(search)
+    result = filter_iqiyi_fields(json_str)
+    reply = ArticlesReply(message=message)
+    i = 0
+    for data in result:
+        if i >= 8:
+            break
+        article = Article(
+            title=result[FORMAT_FIELDS['TITLE']],
+            img=result[FORMAT_FIELDS['PIC_URL']],
+            url=result[FORMAT_FIELDS['PLAY_URL']]
+        )
+        reply.add_article(article)
+        i = i + 1
+    return reply
 
 
 @robot.text
 def on_wechat_message(message):
     logger.info('from %s says: %s' % (message.source, message.content))
-    return process_text_message(message.content, message.source)
+    return process_text_message(message.content, message)
 
 
 @robot.voice
 def on_wechat_sound(message):
     logger.info('from %s says: %s' % (message.recognition, message.content))
-    return process_text_message(message.recognition, message.source)
+    return process_text_message(message.recognition, message)
+
+
+def make_article(result, message):
+    reply = ArticlesReply(message=message)
+    if not isinstance(result, (list, tuple)):
+        return ''
+    elif len(result) <= 0:
+        return ''
