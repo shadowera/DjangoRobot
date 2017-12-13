@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ac5b893b-3de5-4370-bdcc-182509c79e6b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/DjangoTest/urls.py" afterPath="$PROJECT_DIR$/DjangoTest/urls.py" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,23 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="jpushserver.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cmdb/jpushserver.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="832">
-              <caret line="32" column="75" lean-forward="false" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="75" />
-              <folding>
-                <element signature="e#0#12#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="robot.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cmdb/robot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3588">
-              <caret line="138" column="9" lean-forward="true" selection-start-line="132" selection-start-column="7" selection-end-line="138" selection-end-column="9" />
+            <state relative-caret-position="234">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding>
                 <element signature="e#21#32#0" expanded="true" />
               </folding>
@@ -50,8 +39,8 @@
       <file leaf-file-name="robot_xiaoku.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cmdb/xiaoku/robot_xiaoku.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="941">
-              <caret line="54" column="26" lean-forward="false" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="26" />
+            <state relative-caret-position="364">
+              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding>
                 <element signature="e#21#46#0" expanded="true" />
               </folding>
@@ -131,6 +120,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DjangoTest/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="416">
+              <caret line="16" column="40" lean-forward="true" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -163,7 +162,6 @@
         <option value="$PROJECT_DIR$/cmdb/search/search_video.py" />
         <option value="$PROJECT_DIR$/cmdb/search/get_more_tv_access_token.py" />
         <option value="$PROJECT_DIR$/DjangoTest/settings.py" />
-        <option value="$PROJECT_DIR$/DjangoTest/urls.py" />
         <option value="$PROJECT_DIR$/cmdb/baidu_recognize.py" />
         <option value="$PROJECT_DIR$/cmdb/jpushserver.py" />
         <option value="$PROJECT_DIR$/cmdb/models.py" />
@@ -172,6 +170,7 @@
         <option value="$PROJECT_DIR$/cmdb/xiaoku/menu.py" />
         <option value="$PROJECT_DIR$/cmdb/main.py" />
         <option value="$PROJECT_DIR$/cmdb/xiaoku/robot_xiaoku.py" />
+        <option value="$PROJECT_DIR$/DjangoTest/urls.py" />
       </list>
     </option>
   </component>
@@ -434,13 +433,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1511257736872</updated>
-    </task>
-    <task id="LOCAL-00018" summary="add template">
-      <created>1511947593002</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1511947593002</updated>
     </task>
     <task id="LOCAL-00019" summary="add template">
       <created>1511947812737</created>
@@ -778,7 +770,14 @@
       <option name="project" value="LOCAL" />
       <updated>1513156070581</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="add baidu voice">
+      <created>1513156256462</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1513156256462</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1113,40 +1112,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DjangoTest/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="28" column="26" lean-forward="false" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cmdb/jpushserver.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="832">
           <caret line="32" column="75" lean-forward="false" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="75" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmdb/robot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3588">
-          <caret line="138" column="9" lean-forward="true" selection-start-line="132" selection-start-column="7" selection-end-line="138" selection-end-column="9" />
-          <folding>
-            <element signature="e#21#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmdb/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="15" column="69" lean-forward="false" selection-start-line="15" selection-start-column="69" selection-end-line="15" selection-end-column="69" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1199,10 +1170,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/cmdb/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="15" column="69" lean-forward="false" selection-start-line="15" selection-start-column="69" selection-end-line="15" selection-end-column="69" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmdb/robot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <element signature="e#21#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DjangoTest/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="16" column="40" lean-forward="true" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/cmdb/xiaoku/robot_xiaoku.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="941">
-          <caret line="54" column="26" lean-forward="false" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="26" />
+        <state relative-caret-position="364">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding>
             <element signature="e#21#46#0" expanded="true" />
           </folding>
